@@ -32,7 +32,7 @@ public class TestBugTrapp {
     Login loginBugTrapp = PageFactory.initElements(driver, Login.class);
 
     loginBugTrapp.username.sendKeys("stg.stardust.testing+445@gmail.com");
-    loginBugTrapp.password.sendKeys("#Jur4ssi!cP4rk");
+    loginBugTrapp.password.sendKeys("#Jur4ssi!cP4rk!");
     loginBugTrapp.submit.click();
     Thread.sleep(7000);
   }
