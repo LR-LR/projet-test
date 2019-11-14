@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Formation Selenium">
+  <test thread-count="5" name="BugTrapp">
+    <parameter name="url" value="https://stgstg:@@@aaa111@bt-stg.stardust-hosting.com/"></parameter>
+    <parameter name="login" value="stg.stardust.testing+445@gmail.com"></parameter>
+    <parameter name="password" value="#Jur4ssi!cP4rk"></parameter>
+    <parameter name="browser" value="webdrivers\\chromedriver.exe"></parameter>
+    <classes>
+      <class name="com.stardust.formationSelenium.testcases.TestBugTrapp" />
+    </classes>
+  </test> <!-- testbugtrapp -->
+</suite> <!-- suite de tests 1 -->

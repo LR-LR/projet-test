@@ -1,44 +1,30 @@
 package com.stardust.formationSelenium.testcases;
 
-import java.util.concurrent.TimeUnit;
+import com.stardust.formationSelenium.Utility;
 
 import com.stardust.formationSelenium.pages.Login;
 import com.stardust.formationSelenium.pages.Project;
 import com.stardust.formationSelenium.pages.TopMenu;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.annotations.AfterClass;
 
 /**
  * TestBugTrapp
  */
-public class TestBugTrapp {
-  public WebDriver driver;
-
+public class TestBugTrapp extends Utility {
   static private int PAUSE_TIME = 500;
 
-  @BeforeClass
-  public void connexionBrowser() {
-    System.setProperty("webdriver.chrome.driver", "webdrivers\\chromedriver.exe");
-    driver = new ChromeDriver();
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    driver.get("https://stgstg:@@@aaa111@bt-stg.stardust-hosting.com/");
-    // driver.manage().window().maximize();
-  }
-
+  @Parameters({ "login", "password" })
   @Test(priority = 1, description = "Connexion à BugTrapp")
-  public void loginToBugTrapp() throws InterruptedException {
+  public void loginToBugTrapp(String login, String password) throws InterruptedException {
     Login loginBugTrapp = PageFactory.initElements(driver, Login.class);
-
-    loginBugTrapp.username.sendKeys("stg.stardust.testing+445@gmail.com");
-    loginBugTrapp.password.sendKeys("#Jur4ssi!cP4rk!");
+    loginBugTrapp.username.sendKeys(login);
+    loginBugTrapp.password.sendKeys(password);
     loginBugTrapp.submit.click();
     Thread.sleep(2000);
   }
@@ -111,11 +97,5 @@ public class TestBugTrapp {
     projectBugTrapp.opNumber.sendKeys("123456");
     Thread.sleep(PAUSE_TIME);
     projectBugTrapp.productTab.click();
-  }
-
-  @AfterClass
-  public void browserQuit() throws InterruptedException {
-    Thread.sleep(5000);
-    driver.quit();
   }
 }

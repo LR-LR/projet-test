@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Formation Selenium]">
+  <test name="BugTrapp(failed)">
+    <parameter name="password" value="#Jur4ssi!cP4rk!"/>
+    <parameter name="browser" value="webdrivers\\chromedriver.exe"/>
+    <parameter name="login" value="stg.stardust.testing+445@gmail.com"/>
+    <parameter name="url" value="https://stgstg:@@@aaa111@bt-stg.stardust-hosting.com/"/>
+    <classes>
+      <class name="com.stardust.formationSelenium.testcases.TestBugTrapp">
+        <methods>
+          <include name="navigation"/>
+          <include name="connexionBrowser"/>
+          <include name="browserQuit"/>
+          <include name="createNewProject"/>
+        </methods>
+      </class> <!-- com.stardust.formationSelenium.testcases.TestBugTrapp -->
+    </classes>
+  </test> <!-- BugTrapp(failed) -->
+</suite> <!-- Failed suite [Formation Selenium] -->
