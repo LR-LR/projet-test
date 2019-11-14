@@ -10,18 +10,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Parameters;
+// import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 /**
  * TestBugTrapp
  */
 public class TestBugTrapp extends Utility {
-  static private int PAUSE_TIME = 500;
 
-  @Parameters({ "login", "password" })
   @Test(priority = 1, description = "Connexion à BugTrapp")
-  public void loginToBugTrapp(String login, String password) throws InterruptedException {
+  public void loginToBugTrapp() throws InterruptedException {
     Login loginBugTrapp = PageFactory.initElements(driver, Login.class);
     loginBugTrapp.username.sendKeys(login);
     loginBugTrapp.password.sendKeys(password);

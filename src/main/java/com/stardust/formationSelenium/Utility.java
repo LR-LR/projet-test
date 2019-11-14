@@ -14,9 +14,15 @@ import org.testng.annotations.Parameters;
 public class Utility {
 	public WebDriver driver;
 
-	@Parameters({ "browser", "url" })
+	static protected int PAUSE_TIME = 500;
+
+	static protected String browser = "webdrivers\\chromedriver.exe";
+	static protected String url = "https://stgstg:@@@aaa111@bt-stg.stardust-hosting.com/";
+	static protected String login = "stg.stardust.testing+445@gmail.com";
+	static protected String password = "#Jur4ssi!cP4rk";
+
 	@BeforeClass
-	public void connexionBrowser(String browser, String url) {
+	public void connexionBrowser() {
 
 		System.setProperty("webdriver.chrome.driver", browser);
 		driver = new ChromeDriver();
